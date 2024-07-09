@@ -1,0 +1,94 @@
+Ejercicio preparación para examen.
+
+Desarrolle una aplicación en Python utilizando Visual Studio Code como entorno de desarrollo según el siguiente enunciado:
+
+Una empresa necesita analizar los datos de sus productos para generar algunos reportes, y le ha solicitado a usted que realice un prototipo en Python con los siguientes requerimientos:
+
+La aplicación debe permitir analizar los valores de los productos que se encuentran en venta. Solamente tenemos los nombres de los productos en el siguiente array:
+
+productos = ["Café Americano", "Té Chai","Croissant", "Jugo Naranja", "Panini de Pavo y Queso", "Pastel de Zanahoria", "Espresso Doble", "Batido de Frutas", "Muffin", "Ensalada", "Chocolate Caliente", "Tarta de Frambuesa", "Sándwich de Huevo", "Galletas de Avena", "Frappé de Caramelo"]
+
+Lo primero que hay que realizar es asignar aleatoriamente el valor bruto del producto este se debe encontrar entre los 3.000 a 8.000 redondeado a la centena, por ejemplo el valor de un Muffin podría ser de $ 3.400, si el valor da 3.450 o 3.453 estaría incorrecto.
+
+Además se debe calcular el valor de la utilidad del producto que corresponderá al 40% del valor bruto.
+
+También se debe calcular el valor del iva del producto que corresponde al 19% del valor bruto sumado con su utilidad, este valor no debe tener decimales.
+
+Finalmente se deberá calcular el valor venta que corresponderá a la suma de todos los montos.
+
+NOTA:
+Deberá generar un archivo .json o .csv para guardar los valores de los productos
+Ejemplo de .json:
+
+[
+    {
+        'nombre': 'Muffin',
+        'valor_bruto': 2000,
+        'utilidad': 800,
+        'iva': 532,
+        'valor_venta': 3332
+    }
+]
+
+caso de .csv usar la siguiente estructura:
+nombre,valor_bruto,utilidad,iva,valor_venta
+
+La aplicación deberá poseer un menú con las siguientes funcionalidades: 
+1. Asignar valores aleatorios 
+2. Clasificar productos 
+3. Ver estadísticas. 
+4. Reporte de productos 
+5. Salir del programa 
+
+Cada función se detalla a continuación: 
+
+
+1. Asignar valores aleatorios 
+
+Para la generación de estos productos debe crear una función capaz de generar los valores de los productos de forma aleatoria los que serán usados posteriormente para la ejecución del programa.
+
+2. Clasificar productos 
+Deberá desarrollar una función que permita mostrar la lista de productos con sus valores y su respectiva clasificación según el siguiente esquema:
+
+Productos con valor venta menores a $5.000
+    TOTAL: 3
+    Producto    Precio Venta
+    Muffin      $ 3500
+    Jugo        $ 4500
+    Café       $ 4990
+
+Productos con valor venta entre $5.001 a $7.000
+    TOTAL: 2
+    Producto    Precio Venta
+    Panino      $ 5500
+    Torta       $ 6900
+
+Productos con valor venta superior a $ 7.001
+    TOTAL: 1
+    Producto    Precio Venta
+    Pastel      $ 7900
+
+
+3. Ver estadísticas
+Crear una función que permita mostrar por pantalla los siguientes datos con respecto a los sueldos:
+•	Producto con valor venta más alto
+•	Producto con valor venta más bajo
+•	Promedio del valor de venta
+•	Media geométrica del valor bruto
+
+4. Reporte de productos 
+La aplicación deberá poseer una función para mostrar el detalle de los productos. Y mostrarse como la siguiente tabla de ejemplo:
+
+Nombre Producto     Valor Bruto     Utilidad    IVA      Precio Venta
+Muffin              $ 2000          $  800      $  532      $ 3332
+Jugo                $ 4500          $ 1800      $ 1197      $ 7497
+
+El reporte se deberá exportar a un archivo de texto separado por comas (.csv).
+Al final de la ejecución de este apartado deberá indicar un mensaje: Reporte generado.
+
+5. Salir del programa 
+La aplicación deberá finalizar para salir el programa mostrando un mensaje con sus datos.
+Finalizando programa...
+Desarrollado por Ernesto Velásquez
+Gracias!!!
+
