@@ -8,7 +8,10 @@ La aplicación debe permitir analizar los valores de los productos que se encuen
 
 productos = ["Café Americano", "Té Chai","Croissant", "Jugo Naranja", "Panini de Pavo y Queso", "Pastel de Zanahoria", "Espresso Doble", "Batido de Frutas", "Muffin", "Ensalada", "Chocolate Caliente", "Tarta de Frambuesa", "Sándwich de Huevo", "Galletas de Avena", "Frappé de Caramelo"]
 
-Lo primero que hay que realizar es asignar aleatoriamente el valor bruto del producto este se debe encontrar entre los 3.000 a 8.000 redondeado a la centena, por ejemplo el valor de un Muffin podría ser de $ 3.400, si el valor da 3.450 o 3.453 estaría incorrecto.
+Lo primero que hay que realizar es asignar aleatoriamente el 
+valor bruto del producto este se debe encontrar entre los 3.000 a 8.000 
+redondeado a la centena, por ejemplo el valor de un Muffin podría ser de $ 3.400, si el valor da 3.450 o 3.453 
+estaría incorrecto.
 
 Además se debe calcular el valor de la utilidad del producto que corresponderá al 40% del valor bruto.
 
