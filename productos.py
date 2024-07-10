@@ -1,5 +1,6 @@
 import random
 import json
+import csv
 
 def asignar_montos_aleatorios():
     productos = ["Café Americano",
@@ -21,14 +22,14 @@ def asignar_montos_aleatorios():
     todos_los_productos = []
     
     for nombre_producto in productos:
-        nombre = nombre_producto
+        
         valor_bruto = random.randint(30,80) * 100
         utilidad = int(valor_bruto * 0.4)
         iva = int(valor_bruto * 0.19)
         valor_venta = valor_bruto + utilidad + iva
         
         nuevo_producto = {
-            'nombre': nombre,
+            'nombre': nombre_producto,
             'valor_bruto': valor_bruto,
             'utilidad': utilidad,
             'iva': iva,
@@ -48,6 +49,12 @@ def guardar_archivo_json(ruta_archivo, datos):
 def leer_archivo_json(ruta_archivo):
     with open(ruta_archivo, 'r', encoding='utf-8') as archivo:
         return json.load(archivo)
+
+def guardar_archivo_csv(dir, data, fieldnames):
+    with open(dir, mode='w', newline='', encoding='utf-8') as archivo:
+        data_csv = csv.DictWriter(archivo, fieldnames=fieldnames)
+        data_csv.writeheader()
+        data_csv.writerows(data)
 
 def clasificar_productos():
     todos_los_productos = leer_archivo_json('productos.json')
@@ -76,8 +83,16 @@ def clasificar_productos():
         print("-----------------------")
         for producto in listado_productos:
             print(f"{producto['nombre']}  ${producto['valor_venta']}")
-
         print(" ")
-        
+         
+def reporte_de_productos():
+    todos_los_productos = leer_archivo_json('productos.json')
+    
+    print("-----------------------------------------------------------------------")
+    print("| Nombre Producto  | Valor Bruto  |  Utilidad  |  IVA   | Precio Venta |")
+    print("-----------------------------------------------------------------------")
+    for producto in todos_los_productos:
+        print(f"{producto['nombre']} \t\t${producto['valor_bruto']} \t${producto['utilidad']} \t${producto['iva']} \t${producto['valor_venta']}")
 
-        
+    fieldnames = ['nombre', 'valor_bruto', 'utilidad', 'iva', 'valor_venta']
+    guardar_archivo_csv('reporte_productos.csv',todos_los_productos,fieldnames)

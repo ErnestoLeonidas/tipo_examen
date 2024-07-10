@@ -1,5 +1,7 @@
+# https://us-lti.bbcollab.com/recording/287b9b0b44344373aed1b5dc46421410
 import os
 import productos
+import estadisticas
 os.system("clear")
 
 def menu_estadisticas():
@@ -16,12 +18,16 @@ def menu_estadisticas():
 
         if opciones == 1:
             print("1. Producto con valor más alto.")
+            estadisticas.obtener_mas_alto()
         elif opciones == 2:
             print("2. Producto con valor del IVA más bajo.")
+            estadisticas.obtener_mas_bajo()
         elif opciones == 3:
             print("3. Promedio del valor de los productos.")
+            estadisticas.generar_promedios()
         elif opciones == 4:
             print("4. Media geométrica del valor de los productos")
+            estadisticas.generar_media_geometrica()
         elif opciones == 5:
             print("5. Salir.")
             return
@@ -51,6 +57,7 @@ def menu_general():
             menu_estadisticas()
         elif opciones == 4:
             print("4. Reporte de productos ")
+            productos.reporte_de_productos()
         elif opciones == 5:
             print("5. Salir del programa.")
             print("Desarrollado por Ernesto")
